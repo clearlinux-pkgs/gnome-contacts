@@ -4,10 +4,10 @@
 #
 Name     : gnome-contacts
 Version  : 3.32
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/sources/gnome-contacts/3.32/gnome-contacts-3.32.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/3.32/gnome-contacts-3.32.tar.xz
-Summary  : A library full of GTK+ widgets for mobile phones
+Summary  : Contacts Manager for GNOME
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-2.1+
 Requires: gnome-contacts-bin = %{version}-%{release}
@@ -95,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1563893304
+export SOURCE_DATE_EPOCH=1563908498
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
