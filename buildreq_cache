@@ -1,0 +1,12 @@
+3.32
+appstream-glib
+docbook-xml
+folks-dev
+gnome-desktop-dev
+gnome-online-accounts-dev
+libhandy-dev
+pkgconfig(cheese)
+pkgconfig(folks)
+pkgconfig(gnome-desktop-3.0)
+pkgconfig(goa-1.0)
+pkgconfig(libhandy-0.0)
