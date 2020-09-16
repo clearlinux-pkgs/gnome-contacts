@@ -4,7 +4,7 @@
 #
 Name     : gnome-contacts
 Version  : 3.36.2
-Release  : 7
+Release  : 8
 URL      : https://download.gnome.org/sources/gnome-contacts/3.36/gnome-contacts-3.36.2.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/3.36/gnome-contacts-3.36.2.tar.xz
 Summary  : A library full of GTK widgets for mobile phones
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-2.1+
 Requires: gnome-contacts-bin = %{version}-%{release}
 Requires: gnome-contacts-data = %{version}-%{release}
+Requires: gnome-contacts-lib = %{version}-%{release}
 Requires: gnome-contacts-libexec = %{version}-%{release}
 Requires: gnome-contacts-license = %{version}-%{release}
 Requires: gnome-contacts-locales = %{version}-%{release}
@@ -28,7 +29,6 @@ BuildRequires : pkgconfig(cheese)
 BuildRequires : pkgconfig(folks)
 BuildRequires : pkgconfig(gnome-desktop-3.0)
 BuildRequires : pkgconfig(goa-1.0)
-BuildRequires : pkgconfig(libhandy-0.0)
 
 %description
 # GNOME Contacts
@@ -52,6 +52,30 @@ Group: Data
 
 %description data
 data components for the gnome-contacts package.
+
+
+%package dev
+Summary: dev components for the gnome-contacts package.
+Group: Development
+Requires: gnome-contacts-lib = %{version}-%{release}
+Requires: gnome-contacts-bin = %{version}-%{release}
+Requires: gnome-contacts-data = %{version}-%{release}
+Provides: gnome-contacts-devel = %{version}-%{release}
+Requires: gnome-contacts = %{version}-%{release}
+
+%description dev
+dev components for the gnome-contacts package.
+
+
+%package lib
+Summary: lib components for the gnome-contacts package.
+Group: Libraries
+Requires: gnome-contacts-data = %{version}-%{release}
+Requires: gnome-contacts-libexec = %{version}-%{release}
+Requires: gnome-contacts-license = %{version}-%{release}
+
+%description lib
+lib components for the gnome-contacts package.
 
 
 %package libexec
@@ -96,7 +120,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1595366603
+export SOURCE_DATE_EPOCH=1600273181
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -132,15 +156,64 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files data
 %defattr(-,root,root,-)
+/usr/lib64/girepository-1.0/Handy-0.0.typelib
 /usr/share/applications/org.gnome.Contacts.desktop
 /usr/share/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 /usr/share/dbus-1/services/org.gnome.Contacts.service
+/usr/share/gir-1.0/*.gir
 /usr/share/glib-2.0/schemas/org.gnome.Contacts.gschema.xml
 /usr/share/gnome-shell/search-providers/org.gnome.Contacts.search-provider.ini
 /usr/share/icons/hicolor/scalable/apps/org.gnome.Contacts.Devel.svg
 /usr/share/icons/hicolor/scalable/apps/org.gnome.Contacts.svg
 /usr/share/icons/hicolor/symbolic/apps/org.gnome.Contacts-symbolic.svg
 /usr/share/metainfo/org.gnome.Contacts.appdata.xml
+/usr/share/vala/vapi/libhandy-0.0.deps
+/usr/share/vala/vapi/libhandy-0.0.vapi
+
+%files dev
+%defattr(-,root,root,-)
+/usr/include/libhandy-0.0/handy.h
+/usr/include/libhandy-0.0/hdy-action-row.h
+/usr/include/libhandy-0.0/hdy-animation.h
+/usr/include/libhandy-0.0/hdy-arrows.h
+/usr/include/libhandy-0.0/hdy-column.h
+/usr/include/libhandy-0.0/hdy-combo-row.h
+/usr/include/libhandy-0.0/hdy-deprecation-macros.h
+/usr/include/libhandy-0.0/hdy-dialer-button.h
+/usr/include/libhandy-0.0/hdy-dialer-cycle-button.h
+/usr/include/libhandy-0.0/hdy-dialer.h
+/usr/include/libhandy-0.0/hdy-dialog.h
+/usr/include/libhandy-0.0/hdy-enum-value-object.h
+/usr/include/libhandy-0.0/hdy-enums.h
+/usr/include/libhandy-0.0/hdy-expander-row.h
+/usr/include/libhandy-0.0/hdy-fold.h
+/usr/include/libhandy-0.0/hdy-header-bar.h
+/usr/include/libhandy-0.0/hdy-header-group.h
+/usr/include/libhandy-0.0/hdy-keypad.h
+/usr/include/libhandy-0.0/hdy-leaflet.h
+/usr/include/libhandy-0.0/hdy-list-box.h
+/usr/include/libhandy-0.0/hdy-main.h
+/usr/include/libhandy-0.0/hdy-paginator.h
+/usr/include/libhandy-0.0/hdy-preferences-group.h
+/usr/include/libhandy-0.0/hdy-preferences-page.h
+/usr/include/libhandy-0.0/hdy-preferences-row.h
+/usr/include/libhandy-0.0/hdy-preferences-window.h
+/usr/include/libhandy-0.0/hdy-search-bar.h
+/usr/include/libhandy-0.0/hdy-squeezer.h
+/usr/include/libhandy-0.0/hdy-string-utf8.h
+/usr/include/libhandy-0.0/hdy-swipe-group.h
+/usr/include/libhandy-0.0/hdy-swipeable.h
+/usr/include/libhandy-0.0/hdy-title-bar.h
+/usr/include/libhandy-0.0/hdy-value-object.h
+/usr/include/libhandy-0.0/hdy-version.h
+/usr/include/libhandy-0.0/hdy-view-switcher-bar.h
+/usr/include/libhandy-0.0/hdy-view-switcher.h
+/usr/lib64/libhandy-0.0.so
+/usr/lib64/pkgconfig/libhandy-0.0.pc
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/libhandy-0.0.so.0
 
 %files libexec
 %defattr(-,root,root,-)
