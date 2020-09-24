@@ -4,7 +4,7 @@
 #
 Name     : gnome-contacts
 Version  : 3.38
-Release  : 11
+Release  : 12
 URL      : https://download.gnome.org/sources/gnome-contacts/3.38/gnome-contacts-3.38.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/3.38/gnome-contacts-3.38.tar.xz
 Summary  : A library full of GTK widgets for mobile phones
