@@ -1,25 +1,5 @@
-# Performance and debugging related options
-option('profiling', type: 'boolean', value: false)
-
-option('introspection', type: 'feature', value: 'auto')
-option('vapi', type: 'boolean', value: true)
-
-# Subproject
-option('package_subdir', type: 'string',
-  description: 'Subdirectory to append to all installed files, for use as subproject'
-)
-
-option('gtk_doc',
-       type: 'boolean', value: false,
-       description: 'Whether to generate the API reference for Handy')
-
-option('tests',
-       type: 'boolean', value: true,
-       description: 'Whether to compile unit tests')
-
-option('examples',
-       type: 'boolean', value: true,
-       description: 'Build and install the examples and demo applications')
-
-option('glade_catalog', type: 'feature', value: 'auto',
-       description: 'Install a glade catalog file')
+option('profile', type: 'combo', choices: [ 'default', 'development' ], value: 'default', description: 'Indicate whether this is a nightly build (used for CI purposes)')
+option('cheese', type: 'feature', value: 'auto', description: 'If enabled, allows creaing an avatar with the webcam')
+option('telepathy', type: 'boolean', value: false, description: 'Enable Telepathy call/chat support.')
+option('manpage', type: 'boolean', value: true, description: 'Enable building man pages.')
+option('docs', type: 'boolean', value: false, description: 'Whether to build the valadoc docs.')
