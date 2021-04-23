@@ -4,7 +4,7 @@
 #
 Name     : gnome-contacts
 Version  : 40.0
-Release  : 14
+Release  : 15
 URL      : https://download.gnome.org/sources/gnome-contacts/40/gnome-contacts-40.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/40/gnome-contacts-40.0.tar.xz
 Summary  : No detailed summary available
@@ -20,6 +20,7 @@ BuildRequires : appstream-glib
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : docbook-xml
+BuildRequires : evolution-data-server-dev
 BuildRequires : folks-dev
 BuildRequires : gnome-desktop-dev
 BuildRequires : gnome-online-accounts-dev
@@ -96,7 +97,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1619112132
+export SOURCE_DATE_EPOCH=1619151492
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
