@@ -4,7 +4,7 @@
 #
 Name     : gnome-contacts
 Version  : 41.0
-Release  : 16
+Release  : 17
 URL      : https://download.gnome.org/sources/gnome-contacts/41/gnome-contacts-41.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/41/gnome-contacts-41.0.tar.xz
 Summary  : No detailed summary available
@@ -24,6 +24,7 @@ BuildRequires : evolution-data-server-dev
 BuildRequires : folks-dev
 BuildRequires : gnome-desktop-dev
 BuildRequires : gnome-online-accounts-dev
+BuildRequires : gsettings-desktop-schemas
 BuildRequires : pkgconfig(cheese)
 BuildRequires : pkgconfig(cheese-gtk)
 BuildRequires : pkgconfig(folks)
@@ -97,7 +98,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1632932661
+export SOURCE_DATE_EPOCH=1632933613
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -114,7 +115,11 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-meson test -C builddir || :
+target=$HOME/.local/share/glib-2.0/schemas
+mkdir -p $target
+glib-compile-schemas --targetdir=$target /usr/share/glib-2.0/schemas
+export XDG_DATA_DIRS="$HOME/.local/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+meson test -C builddir --print-errorlogs || :
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gnome-contacts
