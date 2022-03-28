@@ -3,3 +3,4 @@
 evolution-data-server-dev
 # For the test suite...
 gsettings-desktop-schemas
+desktop-file-utils

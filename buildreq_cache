@@ -1,12 +1,10 @@
-41.0
+42.0
 appstream-glib
 docbook-xml
 folks-dev
-gnome-desktop-dev
 gnome-online-accounts-dev
-pkgconfig(cheese)
-pkgconfig(cheese-gtk)
+libportal-dev
 pkgconfig(folks)
-pkgconfig(gnome-desktop-3.0)
 pkgconfig(goa-1.0)
-pkgconfig(libhandy-1)
+pkgconfig(libadwaita-1)
+pkgconfig(libportal)
