@@ -1,9 +1,0 @@
-43.0
-appstream-glib
-docbook-xml
-folks-dev
-gnome-online-accounts-dev
-pkgconfig(folks)
-pkgconfig(goa-1.0)
-pkgconfig(libadwaita-1)
-pkgconfig(libportal-gtk4)
