@@ -14,7 +14,9 @@ BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : desktop-file-utils
 BuildRequires : evolution-data-server-dev
+BuildRequires : folks-dev
 BuildRequires : gsettings-desktop-schemas
+BuildRequires : pkgconfig(folks)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -33,7 +35,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1676050820
+export SOURCE_DATE_EPOCH=1676050872
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
