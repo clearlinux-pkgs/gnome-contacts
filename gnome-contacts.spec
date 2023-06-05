@@ -5,7 +5,7 @@
 #
 Name     : gnome-contacts
 Version  : 44.0
-Release  : 39
+Release  : 40
 URL      : https://download.gnome.org/sources/gnome-contacts/44/gnome-contacts-44.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/44/gnome-contacts-44.0.tar.xz
 Summary  : No detailed summary available
