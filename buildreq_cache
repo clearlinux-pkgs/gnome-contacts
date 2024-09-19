@@ -1,9 +1,11 @@
-46.0
+47.0
 docbook-xml
 folks-dev
 gnome-online-accounts-dev
+gstreamer-dev
 pkgconfig(folks)
 pkgconfig(goa-1.0)
+pkgconfig(gstreamer-1.0)
 pkgconfig(libadwaita-1)
 pkgconfig(libportal-gtk4)
 pkgconfig(libqrencode)
