@@ -7,7 +7,7 @@
 #
 Name     : gnome-contacts
 Version  : 47.1.1
-Release  : 60
+Release  : 61
 URL      : https://download.gnome.org/sources/gnome-contacts/47/gnome-contacts-47.1.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/47/gnome-contacts-47.1.1.tar.xz
 Summary  : No detailed summary available
