@@ -7,7 +7,7 @@
 #
 Name     : gnome-contacts
 Version  : 48.0
-Release  : 63
+Release  : 64
 URL      : https://download.gnome.org/sources/gnome-contacts/48/gnome-contacts-48.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-contacts/48/gnome-contacts-48.0.tar.xz
 Summary  : No detailed summary available
